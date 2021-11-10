@@ -5,6 +5,4 @@ class Shoe {
     var brand = ""
     var image = ""
 
-    val shoes = ArrayList<Store>()
-
 }
