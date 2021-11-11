@@ -1,5 +1,6 @@
 package com.example.shoestore
 
+import android.widget.ImageView
 import java.util.ArrayList
 
 class Store {
@@ -11,43 +12,44 @@ class Store {
     }
 
     private fun buy() {
-
     }
 
     private fun clean() {
-
     }
 
     private fun createShoeList() {
         val shoeNike = Shoe()
         shoeNike.brand = "nike"
-        shoeNike.image = ""
+        shoeNike.image = R.id.imageView
         shoes.add(shoeNike)
 
         val shoeAdidas = Shoe()
         shoeAdidas.brand = "adidas"
-        shoeAdidas.image = ""
+        shoeAdidas.image = R.id.imageView2
         shoes.add(shoeAdidas)
 
         val shoeReebok = Shoe()
         shoeReebok.brand = "reebok"
-        shoeReebok.image = ""
+        shoeReebok.image = R.id.imageView3
         shoes.add(shoeReebok)
 
         val shoePolo = Shoe()
         shoePolo.brand = "polo"
-        shoePolo.image = ""
+        shoePolo.image = R.id.imageView4
         shoes.add(shoeReebok)
 
         val shoeJordan = Shoe()
         shoeJordan.brand = "jordan"
-        shoeJordan.image = ""
+        shoeJordan.image = R.id.imageView5
         shoes.add(shoeJordan)
 
         val shoeNewBalance = Shoe()
         shoeNewBalance.brand = "newbalance"
-        shoeNewBalance.image = ""
+        shoeNewBalance.image = R.id.imageView6
         shoes.add(shoeNewBalance)
+
+
+
 
     }
 
