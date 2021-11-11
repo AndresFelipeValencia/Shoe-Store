@@ -51,11 +51,10 @@ class MainActivity : AppCompatActivity() {
         shoeReebok?.setOnClickListener() {}
 
         buttonBuy = findViewById(R.id.id_button_buy)
-        buttonBuy?.setOnClickListener(){}
+        buttonBuy?.setOnClickListener() {}
 
         buttonClean = findViewById(R.id.id_button_clean)
-        buttonClean?.setOnClickListener(){
-        }
+        buttonClean?.setOnClickListener() {}
 
 
     }

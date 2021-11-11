@@ -48,8 +48,6 @@ class Store {
         shoes.add(shoeNewBalance)
 
 
-
-
     }
 
 
