@@ -1,51 +1,50 @@
 package com.example.shoestore
 
-import android.widget.ImageView
 import java.util.ArrayList
 
 class Store {
 
     private val shoes = ArrayList<Shoe>()
 
-    private fun addToCart() {
+    fun addToCart() {
 
     }
 
-    private fun buy() {
+    fun buy() {
     }
 
-    private fun clean() {
+    fun clean() {
     }
 
-    private fun createShoeList() {
+    fun createShoeList() {
         val shoeNike = Shoe()
         shoeNike.brand = "nike"
-        shoeNike.image = R.id.imageView
+        shoeNike.imageId = R.id.id_image_nike
         shoes.add(shoeNike)
 
         val shoeAdidas = Shoe()
         shoeAdidas.brand = "adidas"
-        shoeAdidas.image = R.id.imageView2
+        shoeAdidas.imageId = R.id.id_image_polo
         shoes.add(shoeAdidas)
 
         val shoeReebok = Shoe()
         shoeReebok.brand = "reebok"
-        shoeReebok.image = R.id.imageView3
+        shoeReebok.imageId = R.id.id_image_jordan
         shoes.add(shoeReebok)
 
         val shoePolo = Shoe()
         shoePolo.brand = "polo"
-        shoePolo.image = R.id.imageView4
+        shoePolo.imageId = R.id.id_image_adidas
         shoes.add(shoeReebok)
 
         val shoeJordan = Shoe()
         shoeJordan.brand = "jordan"
-        shoeJordan.image = R.id.imageView5
+        shoeJordan.imageId = R.id.id_image_new_balance
         shoes.add(shoeJordan)
 
         val shoeNewBalance = Shoe()
         shoeNewBalance.brand = "newbalance"
-        shoeNewBalance.image = R.id.imageView6
+        shoeNewBalance.imageId = R.id.id_image_reebok
         shoes.add(shoeNewBalance)
 
 

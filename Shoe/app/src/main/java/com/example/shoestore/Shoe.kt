@@ -3,6 +3,6 @@ package com.example.shoestore
 class Shoe {
 
     var brand = ""
-    var image: Int = 0
+    var imageId: Int = 0
 
 }

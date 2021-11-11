@@ -7,7 +7,7 @@
     tools:context=".MainActivity">
 
     <ImageView
-        android:id="@+id/imageView"
+        android:id="@+id/id_image_nike"
         android:layout_width="115dp"
         android:layout_height="133dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -16,10 +16,10 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.18"
-        app:srcCompat="@drawable/nikeair" />
+        app:srcCompat="@drawable/image_nike" />
 
     <ImageView
-        android:id="@+id/imageView2"
+        android:id="@+id/id_image_polo"
         android:layout_width="115dp"
         android:layout_height="133dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -28,10 +28,10 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.18"
-        app:srcCompat="@drawable/polo" />
+        app:srcCompat="@drawable/image_polo" />
 
     <ImageView
-        android:id="@+id/imageView3"
+        android:id="@+id/id_image_jordan"
         android:layout_width="115dp"
         android:layout_height="133dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -40,32 +40,10 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.18"
-        app:srcCompat="@drawable/istockphoto_471565617_612x612" />
+        app:srcCompat="@drawable/image_jordan" />
 
     <ImageView
-        android:id="@+id/imageView6"
-        android:layout_width="115dp"
-        android:layout_height="133dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.966"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/rebook" />
-
-    <ImageView
-        android:id="@+id/imageView5"
-        android:layout_width="115dp"
-        android:layout_height="133dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.51"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/newbalance" />
-
-    <ImageView
-        android:id="@+id/imageView4"
+        android:id="@+id/id_image_adidas"
         android:layout_width="115dp"
         android:layout_height="133dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -73,7 +51,29 @@
         app:layout_constraintHorizontal_bias="0.054"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/tenis_nmd_r1" />
+        app:srcCompat="@drawable/image_adidas" />
+
+    <ImageView
+        android:id="@+id/id_image_new_balance"
+        android:layout_width="115dp"
+        android:layout_height="133dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.51"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/new_balance" />
+
+    <ImageView
+        android:id="@+id/id_image_reebok"
+        android:layout_width="115dp"
+        android:layout_height="133dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.966"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/image_reebok" />
 
     <TextView
         android:id="@+id/textView"
@@ -89,7 +89,7 @@
         app:layout_constraintVertical_bias="0.094" />
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/id_number_shoe"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="32dp"
@@ -103,12 +103,12 @@
         app:layout_constraintVertical_bias="0.729" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/id_button_buy"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
         android:layout_marginBottom="8dp"
-        android:text="Buy!"
+        android:text="@string/buy"
         android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -118,7 +118,7 @@
         app:layout_constraintVertical_bias="0.84" />
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/id_button_clean"
         android:layout_width="162dp"
         android:layout_height="52dp"
         android:layout_marginTop="32dp"
