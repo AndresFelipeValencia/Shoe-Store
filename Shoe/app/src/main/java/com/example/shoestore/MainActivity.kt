@@ -5,60 +5,68 @@ import android.os.Bundle
 import android.view.MotionEvent
 import android.widget.Button
 import android.widget.ImageView
+import com.example.shoestore.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
-    override fun onTouchEvent(event: MotionEvent): Boolean {
-        return super.onTouchEvent(event)
-    }
+    val instanceOfStore = Store()
 
-    private var shoeNike: ImageView? = null
-    private var shoePolo: ImageView? = null
-    private var shoeJordan: ImageView? = null
-    private var shoeAdidas: ImageView? = null
-    private var shoeNewBalance: ImageView? = null
-    private var shoeReebok: ImageView? = null
+    val listShoeSelected: MutableList<EnumShoe> = mutableListOf()
 
-    private var buttonBuy: Button? = null
-    private var buttonClean: Button? = null
-
+    lateinit var binding: ActivityMainBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
 
-        val instanceOfStore = Store()
-        instanceOfStore.createShoeList()
-        instanceOfStore.addToCart()
-        instanceOfStore.buy()
-        instanceOfStore.clean()
+        binding = ActivityMainBinding.inflate(layoutInflater)
 
-        shoeNike = findViewById(R.id.id_image_nike)
-        shoeNike?.setOnClickListener() {}
+        setContentView(binding.root)
 
-        shoePolo = findViewById(R.id.id_image_polo)
-        shoePolo?.setOnClickListener() {}
+        binding.imageNike.setOnClickListener {
+           if (listShoeSelected.contains(EnumShoe.NIKE)){
+               listShoeSelected.add(EnumShoe.NIKE)
+           }
+        }
 
-        shoeJordan = findViewById(R.id.id_image_jordan)
-        shoeJordan?.setOnClickListener() {}
+        binding.imagePolo.setOnClickListener {
+           if (listShoeSelected.contains(EnumShoe.POLO)){
+               listShoeSelected.add(EnumShoe.POLO)
+           }
+        }
 
-        shoeAdidas = findViewById(R.id.id_image_adidas)
-        shoeAdidas?.setOnClickListener() {}
+        binding.imageAdidas.setOnClickListener {
+            if (listShoeSelected.contains(EnumShoe.ADIDAS)){
+                listShoeSelected.add(EnumShoe.ADIDAS)
+            }
+        }
 
-        shoeNewBalance = findViewById(R.id.id_image_new_balance)
-        shoeNewBalance?.setOnClickListener() {}
+        binding.imageNewBalance.setOnClickListener {
+            if (listShoeSelected.contains(EnumShoe.NEWBALANCE)){
+                listShoeSelected.add(EnumShoe.NEWBALANCE)
+            }
+        }
 
-        shoeReebok = findViewById(R.id.id_image_reebok)
-        shoeReebok?.setOnClickListener() {}
+        binding.sumaNumberShoe.setText(0)
 
-        buttonBuy = findViewById(R.id.id_button_buy)
-        buttonBuy?.setOnClickListener() {}
+        binding.idButtonBuy.setOnClickListener {
+            buy()
+        }
 
-        buttonClean = findViewById(R.id.id_button_clean)
-        buttonClean?.setOnClickListener() {}
+        binding.idButtonClean.setOnClickListener {
+            clean()
+        }
+    }
 
+    fun addToCar() {
 
+    }
+
+    fun buy() {
+
+    }
+
+    fun clean() {
+        listShoeSelected.clear()
     }
 
 
 }
-
