@@ -2,10 +2,10 @@ package com.example.shoestore
 
 class Shoe {
 
-    var nombre: String = ""
-    var listBrand: List<EnumBrand> = listOf()
+    var nameShoe: String = ""
+    lateinit var brand: EnumBrand
     var colorShoe: String = ""
-    var talla: Int = 0
+    var sizeShoe: Int = 0
     var imageId: Int = 0
 
     //    var brand = ""

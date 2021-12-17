@@ -1,6 +1,7 @@
 package com.example.shoestore
 
 import android.widget.Toast
+import java.text.FieldPosition
 
 class Store {
 
@@ -10,81 +11,76 @@ class Store {
 
     fun createShoeList() {
         val shoeNike = Shoe()
-        shoeNike.listBrand = listOf(EnumBrand.NIKE)
+        shoeNike.brand = (EnumBrand.NIKE)
         shoeNike.imageId = R.id.id_image_nike
+        shoeNike.nameShoe = "Nike Air Force 1"
+        shoeNike.colorShoe = "White"
+        shoeNike.sizeShoe = 40
         listShoe.add(shoeNike)
 
         val shoePolo = Shoe()
-        shoePolo.listBrand = listOf(EnumBrand.POLO)
-        shoePolo.imageId = R.id.id_image_adidas
+        shoePolo.brand = (EnumBrand.POLO)
+        shoePolo.imageId = R.id.id_image_polo
+        shoePolo.nameShoe = "Polo Fashion"
+        shoePolo.colorShoe = "Black Red"
+        shoePolo.sizeShoe = 41
         listShoe.add(shoePolo)
 
         val shoeJordan = Shoe()
-        shoeJordan.listBrand = listOf(EnumBrand.JORDAN)
-        shoeJordan.imageId = R.id.id_image_new_balance
+        shoeJordan.brand = (EnumBrand.JORDAN)
+        shoeJordan.imageId = R.id.id_image_jordan
+        shoeJordan.nameShoe = "Nike Jordan"
+        shoeJordan.colorShoe = "Black Red"
+        shoeJordan.sizeShoe = 39
         listShoe.add(shoeJordan)
 
         val shoeAdidas = Shoe()
-        shoeAdidas.listBrand = listOf(EnumBrand.ADIDAS)
-        shoeAdidas.imageId = R.id.id_image_polo
+        shoeAdidas.brand = (EnumBrand.ADIDAS)
+        shoeAdidas.imageId = R.id.id_image_adidas
+        shoeAdidas.nameShoe = "Adidas Trainer"
+        shoeAdidas.colorShoe = "Black"
+        shoeAdidas.sizeShoe = 41
         listShoe.add(shoeAdidas)
 
         val shoeNewBalance = Shoe()
-        shoeNewBalance.listBrand = listOf(EnumBrand.NEWBALANCE)
-        shoeNewBalance.imageId = R.id.id_image_reebok
+        shoeNewBalance.brand = (EnumBrand.NEWBALANCE)
+        shoeNewBalance.imageId = R.id.id_image_new_balance
+        shoeNewBalance.nameShoe = "Balance Coffee"
+        shoeNewBalance.colorShoe = "Light grey"
+        shoeNewBalance.sizeShoe = 42
         listShoe.add(shoeNewBalance)
 
         val shoeReebok = Shoe()
-        shoeReebok.listBrand = listOf(EnumBrand.REEBOK)
-        shoeReebok.imageId = R.id.id_image_jordan
+        shoeReebok.brand = (EnumBrand.REEBOK)
+        shoeReebok.imageId = R.id.id_image_reebok
+        shoeReebok.nameShoe = "Reebok Gold"
+        shoeReebok.colorShoe = "Black Gold"
+        shoeReebok.sizeShoe = 38
         listShoe.add(shoeReebok)
     }
 
-    fun addToCart(id: Int) {
-        val shoeZero = listShoe[0]
-        if (listCar.contains(shoeZero)) {
-            listCar.remove(shoeZero)
+    fun addToCart(shoePosition: Int) {
+        val shoe = listShoe[shoePosition]
+        if (listCar.contains(shoe)) {
+            listCar.remove(shoe)
         } else {
-            listCar.add(shoeZero)
-        }
-
-        val shoeOne = listShoe[1]
-        if (listCar.contains(shoeOne)) {
-            listCar.remove(shoeOne)
-        } else  {
-            listCar.add(shoeOne)
-        }
-
-        val shoeTwo = listShoe[2]
-        if (listCar.contains(shoeTwo)) {
-            listCar.remove(shoeTwo)
-        } else {
-            listCar.add(shoeTwo)
-        }
-
-        val shoeThree = listShoe[3]
-        if (listCar.contains(shoeThree)) {
-            listCar.remove(shoeThree)
-        } else {
-            listCar.add(shoeThree)
-        }
-
-        val shoeFour = listShoe[4]
-        if (listCar.contains(shoeFour)) {
-            listCar.remove(shoeFour)
-        } else {
-            listCar.add(shoeFour)
-        }
-
-        val shoeFive = listShoe[5]
-        if (listCar.contains(shoeFive)) {
-            listCar.remove(shoeFive)
-        } else  {
-            listCar.add(shoeFive)
+            listCar.add(shoe)
         }
     }
 
-    fun buy() {
+    fun quantityShoe(): Int {
+        return listCar.size
+    }
+
+    fun buy()  {
+//        val buyShoes = listCar
+//        if (listCar.contains(Shoe())) {
+//            listShoe.remove(Shoe())
+//            Toast.makeText(this, "No es posible hacer la compra, elija un articulo",
+//                Toast.LENGTH_SHORT).show()
+//        } else if (listCar.isEmpty()) {
+//            Toast.makeText(this, "Gracias por su compra", Toast.LENGTH_SHORT).show()
+//        }
 
     }
 
