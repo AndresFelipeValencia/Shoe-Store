@@ -8,6 +8,4 @@ class Shoe {
     var sizeShoe: Int = 0
     var imageId: Int = 0
 
-    //    var brand = ""
-
 }

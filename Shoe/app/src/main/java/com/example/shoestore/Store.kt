@@ -1,5 +1,6 @@
 package com.example.shoestore
 
+import android.content.Context
 import android.widget.Toast
 import java.text.FieldPosition
 
@@ -7,7 +8,6 @@ class Store {
 
     val listShoe: MutableList<Shoe> = mutableListOf()
     val listCar: MutableList<Shoe> = mutableListOf()
-//    private val shoes = ArrayList<Shoe>()
 
     fun createShoeList() {
         val shoeNike = Shoe()
@@ -72,23 +72,20 @@ class Store {
         return listCar.size
     }
 
-    fun buy()  {
-//        val buyShoes = listCar
-//        if (listCar.contains(Shoe())) {
-//            listShoe.remove(Shoe())
-//            Toast.makeText(this, "No es posible hacer la compra, elija un articulo",
-//                Toast.LENGTH_SHORT).show()
-//        } else if (listCar.isEmpty()) {
-//            Toast.makeText(this, "Gracias por su compra", Toast.LENGTH_SHORT).show()
-//        }
-
+    fun buy(requireContext: Context)  {
+        if  (listCar.isEmpty()) {
+            Toast.makeText(requireContext, "No es posible hacer la compra, canasta vacia.", Toast.LENGTH_SHORT).show()
+        } else if (listCar.isNotEmpty()) {
+            for (i in listCar.indices) {
+                listShoe.remove(Shoe())
+            }
+            listCar.clear()
+            Toast.makeText(requireContext, "Gracias por su compra.", Toast.LENGTH_SHORT).show()
+        }
     }
 
     fun clean() {
         listCar.clear()
     }
-
-
-
 
 }
