@@ -6,8 +6,8 @@ import java.text.FieldPosition
 
 class Store {
 
-    val listShoe: MutableList<Shoe> = mutableListOf()
-    val listCar: MutableList<Shoe> = mutableListOf()
+    private val listShoe: MutableList<Shoe> = mutableListOf()
+    private val listCar: MutableList<Shoe> = mutableListOf()
 
     fun createShoeList() {
         val shoeNike = Shoe()
@@ -64,7 +64,7 @@ class Store {
         when {
             shoe.isSold -> {
                 Toast.makeText(
-                    requireContext, "El zapatono esta disponible.",
+                    requireContext, "The shoe is not available.",
                     Toast.LENGTH_SHORT
                 ).show()
             }
