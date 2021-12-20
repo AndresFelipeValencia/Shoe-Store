@@ -76,13 +76,12 @@ class MainActivity : AppCompatActivity() {
 
         buttonClean = findViewById(R.id.id_button_clean)
         buttonClean?.setOnClickListener {
-            instanceOfStore.clean()
+            instanceOfStore.clean(requireContext = this)
             quantityShoe = findViewById(R.id.id_number_shoe)
             quantityShoe!!.text = instanceOfStore.quantityShoe().toString()
         }
 
     }
-
 
 }
 
