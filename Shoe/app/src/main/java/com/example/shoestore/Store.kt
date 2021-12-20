@@ -59,12 +59,16 @@ class Store {
         listShoe.add(shoeReebok)
     }
 
-    fun addToCart(shoePosition: Int) {
+    fun addToCart(shoePosition: Int, requireContext: Context) {
         val shoe = listShoe[shoePosition]
-        if (listCar.contains(shoe)) {
-            listCar.remove(shoe)
+        if (shoe.isSold) {
+            if (listCar.contains(shoe)) {
+                listCar.remove(shoe)
+            } else {
+                listCar.add(shoe)
+            }
         } else {
-            listCar.add(shoe)
+            Toast.makeText(requireContext, "El zapato no esta disponible.", Toast.LENGTH_SHORT).show()
         }
     }
 
@@ -76,8 +80,8 @@ class Store {
         if  (listCar.isEmpty()) {
             Toast.makeText(requireContext, "No es posible hacer la compra, canasta vacia.", Toast.LENGTH_SHORT).show()
         } else if (listCar.isNotEmpty()) {
-            for (i in listCar.indices) {
-                listShoe.remove(Shoe())
+            listCar.forEach { shoe ->
+                shoe.isSold = true
             }
             listCar.clear()
             Toast.makeText(requireContext, "Gracias por su compra.", Toast.LENGTH_SHORT).show()

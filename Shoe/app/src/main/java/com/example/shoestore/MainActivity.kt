@@ -27,42 +27,42 @@ class MainActivity : AppCompatActivity() {
 
         shoeNike = findViewById(R.id.id_image_nike)
         shoeNike?.setOnClickListener {
-            instanceOfStore.addToCart(0)
+            instanceOfStore.addToCart(0, requireContext = this)
             quantityShoe = findViewById(R.id.id_number_shoe)
             quantityShoe!!.text = instanceOfStore.quantityShoe().toString()
         }
 
         shoePolo = findViewById(R.id.id_image_polo)
         shoePolo?.setOnClickListener {
-            instanceOfStore.addToCart(1)
+            instanceOfStore.addToCart(1, requireContext = this)
             quantityShoe = findViewById(R.id.id_number_shoe)
             quantityShoe!!.text = instanceOfStore.quantityShoe().toString()
         }
 
         shoeJordan = findViewById(R.id.id_image_jordan)
         shoeJordan?.setOnClickListener {
-            instanceOfStore.addToCart(2)
+            instanceOfStore.addToCart(2, requireContext = this)
             quantityShoe = findViewById(R.id.id_number_shoe)
             quantityShoe!!.text = instanceOfStore.quantityShoe().toString()
         }
 
         shoeAdidas = findViewById(R.id.id_image_adidas)
         shoeAdidas?.setOnClickListener {
-            instanceOfStore.addToCart(3)
+            instanceOfStore.addToCart(3, requireContext = this)
             quantityShoe = findViewById(R.id.id_number_shoe)
             quantityShoe!!.text = instanceOfStore.quantityShoe().toString()
         }
 
         shoeNewBalance = findViewById(R.id.id_image_new_balance)
         shoeNewBalance?.setOnClickListener {
-            instanceOfStore.addToCart(4)
+            instanceOfStore.addToCart(4, requireContext = this)
             quantityShoe = findViewById(R.id.id_number_shoe)
             quantityShoe!!.text = instanceOfStore.quantityShoe().toString()
         }
 
         shoeReebok = findViewById(R.id.id_image_reebok)
         shoeReebok?.setOnClickListener {
-            instanceOfStore.addToCart(5)
+            instanceOfStore.addToCart(5, requireContext = this)
             quantityShoe = findViewById(R.id.id_number_shoe)
             quantityShoe!!.text = instanceOfStore.quantityShoe().toString()
         }
