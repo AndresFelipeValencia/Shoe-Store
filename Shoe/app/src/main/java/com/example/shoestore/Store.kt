@@ -6,8 +6,8 @@ import java.text.FieldPosition
 
 class Store {
 
-    val listShoe: MutableList<Shoe> = mutableListOf()
-    val listCar: MutableList<Shoe> = mutableListOf()
+    private val listShoe: MutableList<Shoe> = mutableListOf()
+    private val listCar: MutableList<Shoe> = mutableListOf()
 
     fun createShoeList() {
         val shoeNike = Shoe()
@@ -59,12 +59,21 @@ class Store {
         listShoe.add(shoeReebok)
     }
 
-    fun addToCart(shoePosition: Int) {
+    fun addToCart(shoePosition: Int, requireContext: Context) {
         val shoe = listShoe[shoePosition]
-        if (listCar.contains(shoe)) {
-            listCar.remove(shoe)
-        } else {
-            listCar.add(shoe)
+        when {
+            shoe.isSold -> {
+                Toast.makeText(
+                    requireContext, "The shoe is not available.",
+                    Toast.LENGTH_SHORT
+                ).show()
+            }
+            listCar.contains(shoe) -> {
+                listCar.remove(shoe)
+            }
+            else -> {
+                listCar.add(shoe)
+            }
         }
     }
 
@@ -72,20 +81,28 @@ class Store {
         return listCar.size
     }
 
-    fun buy(requireContext: Context)  {
-        if  (listCar.isEmpty()) {
-            Toast.makeText(requireContext, "No es posible hacer la compra, canasta vacia.", Toast.LENGTH_SHORT).show()
+    fun buy(requireContext: Context) {
+        if (listCar.isEmpty()) {
+            Toast.makeText(
+                requireContext,
+                "It is not possible to make the purchase, empty basket.",
+                Toast.LENGTH_SHORT
+            ).show()
         } else if (listCar.isNotEmpty()) {
-            for (i in listCar.indices) {
-                listShoe.remove(Shoe())
+            listCar.forEach { shoe ->
+                shoe.isSold = true
             }
             listCar.clear()
-            Toast.makeText(requireContext, "Gracias por su compra.", Toast.LENGTH_SHORT).show()
+            Toast.makeText(
+                requireContext, "Thanks for your purchase.",
+                Toast.LENGTH_SHORT
+            ).show()
         }
     }
 
-    fun clean() {
+    fun clean(requireContext: Context) {
         listCar.clear()
+        Toast.makeText(requireContext, "Cart is empty!.", Toast.LENGTH_SHORT).show()
     }
 
 }
