@@ -1,9 +1,9 @@
 package com.example.shoestore
 
 import android.content.Context
+import android.widget.Button
 import android.widget.ImageView
 import android.widget.Toast
-import java.text.FieldPosition
 import kotlin.math.E
 
 class Store {
@@ -65,7 +65,8 @@ class Store {
         val shoe = listShoe[shoePosition]
         when {
             shoe.isSold -> {
-                Toast.makeText(requireContext, "The shoe is not available.", Toast.LENGTH_SHORT).show()
+                Toast.makeText(requireContext, "The shoe is not available.", Toast.LENGTH_SHORT)
+                    .show()
             }
             listCar.contains(shoe) -> {
                 listCar.remove(shoe)
@@ -84,8 +85,10 @@ class Store {
 
     fun buy(requireContext: Context) {
         if (listCar.isEmpty()) {
-            Toast.makeText(requireContext,
-                "It is not possible to make the purchase, empty basket.", Toast.LENGTH_SHORT).show()
+            Toast.makeText(
+                requireContext,
+                "It is not possible to make the purchase, empty basket.", Toast.LENGTH_SHORT
+            ).show()
         } else if (listCar.isNotEmpty()) {
             listCar.forEach { shoe ->
                 shoe.isSold = true
@@ -95,9 +98,17 @@ class Store {
         }
     }
 
-    fun clean(requireContext: Context) {
-        listCar.clear()
-        Toast.makeText(requireContext, "Cart is empty!.", Toast.LENGTH_SHORT).show()
+    fun clean(shoePosition: Int, requireContext: Context, imageView: ImageView) {
+        val shoe = listShoe[shoePosition]
+        for (i in listShoe.indices) {
+            if (shoe.isSold) {
+                imageView.setImageResource(R.drawable.no_available)
+            } else {
+                imageView.setImageResource(shoe.imageId)
+            }
+            listCar.clear()
+            Toast.makeText(requireContext, "Cart is empty!.", Toast.LENGTH_SHORT).show()
+        }
     }
 
 }

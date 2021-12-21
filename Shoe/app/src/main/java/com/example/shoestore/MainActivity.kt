@@ -1,6 +1,8 @@
 package com.example.shoestore
+
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
 import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
@@ -35,14 +37,14 @@ class MainActivity : AppCompatActivity() {
         instanceOfStore.createShoeList()
 
         instanceOfStore.listShoe.forEach { shoe ->
-              when(shoe.brand) {
-                  EnumBrand.NIKE -> shoeNikeView!!.setImageResource(shoe.imageId)
-                  EnumBrand.POLO -> shoePoloView!!.setImageResource(shoe.imageId)
-                  EnumBrand.JORDAN -> shoeJordanView!!.setImageResource(shoe.imageId)
-                  EnumBrand.ADIDAS -> shoeAdidasView!!.setImageResource(shoe.imageId)
-                  EnumBrand.NEWBALANCE -> shoeNewBalanceView!!.setImageResource(shoe.imageId)
-                  EnumBrand.REEBOK -> shoeReebokView!!.setImageResource(shoe.imageId)
-              }
+            when (shoe.brand) {
+                EnumBrand.NIKE -> shoeNikeView!!.setImageResource(shoe.imageId)
+                EnumBrand.POLO -> shoePoloView!!.setImageResource(shoe.imageId)
+                EnumBrand.JORDAN -> shoeJordanView!!.setImageResource(shoe.imageId)
+                EnumBrand.ADIDAS -> shoeAdidasView!!.setImageResource(shoe.imageId)
+                EnumBrand.NEWBALANCE -> shoeNewBalanceView!!.setImageResource(shoe.imageId)
+                EnumBrand.REEBOK -> shoeReebokView!!.setImageResource(shoe.imageId)
+            }
         }
 
         shoeNikeView?.setOnClickListener {
@@ -81,7 +83,12 @@ class MainActivity : AppCompatActivity() {
         }
 
         buttonClean?.setOnClickListener {
-            instanceOfStore.clean(requireContext = this)
+            instanceOfStore.clean(0, requireContext = this, imageView = shoeNikeView!!)
+            instanceOfStore.clean(1, requireContext = this, imageView = shoePoloView!!)
+            instanceOfStore.clean(2, requireContext = this, imageView = shoeJordanView!!)
+            instanceOfStore.clean(3, requireContext = this, imageView = shoeAdidasView!!)
+            instanceOfStore.clean(4, requireContext = this, imageView = shoeNewBalanceView!!)
+            instanceOfStore.clean(5, requireContext = this, imageView = shoeReebokView!!)
             quantityShoe!!.text = instanceOfStore.quantityShoe().toString()
         }
     }
