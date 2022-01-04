@@ -6,6 +6,11 @@ import android.view.View
 import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
+import android.widget.Toast
+import androidx.recyclerview.widget.RecyclerView
+import com.example.shoestore.EnumBrand.*
+import com.example.shoestore.adapter.ItemAdapter
+import com.example.shoestore.data.Datasource
 
 class MainActivity : AppCompatActivity() {
     private val instanceOfStore = Store()
@@ -24,6 +29,13 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+//        val myDataset = Datasource().loadShoes()
+//
+//        val recyclerView = findViewById<RecyclerView>(R.id.)
+//        recyclerView.adapter = ItemAdapter(this, myDataset)
+//
+//        recyclerView.setHasFixedSize(true)
+
         shoeNikeView = findViewById(R.id.image_nike)
         shoePoloView = findViewById(R.id.image_polo)
         shoeJordanView = findViewById(R.id.image_jordan)
@@ -38,12 +50,12 @@ class MainActivity : AppCompatActivity() {
 
         instanceOfStore.listShoe.forEach { shoe ->
             when (shoe.brand) {
-                EnumBrand.NIKE -> shoeNikeView!!.setImageResource(shoe.imageId)
-                EnumBrand.POLO -> shoePoloView!!.setImageResource(shoe.imageId)
-                EnumBrand.JORDAN -> shoeJordanView!!.setImageResource(shoe.imageId)
-                EnumBrand.ADIDAS -> shoeAdidasView!!.setImageResource(shoe.imageId)
-                EnumBrand.NEWBALANCE -> shoeNewBalanceView!!.setImageResource(shoe.imageId)
-                EnumBrand.REEBOK -> shoeReebokView!!.setImageResource(shoe.imageId)
+                NIKE -> shoeNikeView!!.setImageResource(shoe.imageId)
+                POLO -> shoePoloView!!.setImageResource(shoe.imageId)
+                JORDAN -> shoeJordanView!!.setImageResource(shoe.imageId)
+                ADIDAS -> shoeAdidasView!!.setImageResource(shoe.imageId)
+                NEWBALANCE -> shoeNewBalanceView!!.setImageResource(shoe.imageId)
+                REEBOK -> shoeReebokView!!.setImageResource(shoe.imageId)
             }
         }
 
@@ -51,32 +63,26 @@ class MainActivity : AppCompatActivity() {
             instanceOfStore.addToCart(0, requireContext = this, imageView = shoeNikeView!!)
             quantityShoe!!.text = instanceOfStore.quantityShoe().toString()
         }
-
         shoePoloView?.setOnClickListener {
             instanceOfStore.addToCart(1, requireContext = this, imageView = shoePoloView!!)
             quantityShoe!!.text = instanceOfStore.quantityShoe().toString()
         }
-
         shoeJordanView?.setOnClickListener {
             instanceOfStore.addToCart(2, requireContext = this, imageView = shoeJordanView!!)
             quantityShoe!!.text = instanceOfStore.quantityShoe().toString()
         }
-
         shoeAdidasView?.setOnClickListener {
             instanceOfStore.addToCart(3, requireContext = this, imageView = shoeAdidasView!!)
             quantityShoe!!.text = instanceOfStore.quantityShoe().toString()
         }
-
         shoeNewBalanceView?.setOnClickListener {
             instanceOfStore.addToCart(4, requireContext = this, imageView = shoeNewBalanceView!!)
             quantityShoe!!.text = instanceOfStore.quantityShoe().toString()
         }
-
         shoeReebokView?.setOnClickListener {
             instanceOfStore.addToCart(5, requireContext = this, imageView = shoeReebokView!!)
             quantityShoe!!.text = instanceOfStore.quantityShoe().toString()
         }
-
         buttonBuy?.setOnClickListener {
             instanceOfStore.buy(requireContext = this)
             quantityShoe!!.text = instanceOfStore.quantityShoe().toString()
@@ -94,4 +100,12 @@ class MainActivity : AppCompatActivity() {
     }
 
 }
+
+
+//            instanceOfStore.listShoe.forEach { shoe ->
+//                when (shoe.brand) {
+//
+//                    else ->
+//                }
+//            }
 
