@@ -1,5 +1,4 @@
 package com.example.shoestore
-
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
@@ -17,7 +16,7 @@ class MainActivity : AppCompatActivity() {
 
     var shoeNikeView: ImageView? = null
     var shoePoloView: ImageView? = null
-    var shoeJordanView: ImageView? = null
+    private var shoeJordanView: ImageView? = null
     var shoeAdidasView: ImageView? = null
     var shoeNewBalanceView: ImageView? = null
     var shoeReebokView: ImageView? = null
@@ -29,22 +28,23 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-//        val myDataset = Datasource().loadShoes()
-//
-//        val recyclerView = findViewById<RecyclerView>(R.id.)
-//        recyclerView.adapter = ItemAdapter(this, myDataset)
-//
-//        recyclerView.setHasFixedSize(true)
+        val myDataset = Datasource().loadShoes()
 
-        shoeNikeView = findViewById(R.id.image_nike)
-        shoePoloView = findViewById(R.id.image_polo)
-        shoeJordanView = findViewById(R.id.image_jordan)
-        shoeAdidasView = findViewById(R.id.image_adidas)
-        shoeNewBalanceView = findViewById(R.id.image_new_balance)
-        shoeReebokView = findViewById(R.id.image_reebok)
+        val recyclerView = findViewById<RecyclerView>(R.id.recycler_view)
+        recyclerView.adapter = ItemAdapter(this, myDataset)
+
+        recyclerView.setHasFixedSize(true)
+
         buttonBuy = findViewById(R.id.button_buy)
         buttonClean = findViewById(R.id.button_clean)
         quantityShoe = findViewById(R.id.number_shoe)
+
+//        shoeNikeView = findViewById(R.id.image_nike)
+//        shoePoloView = findViewById(R.id.image_polo)
+//        shoeJordanView = findViewById(R.id.image_jordan)
+//        shoeAdidasView = findViewById(R.id.image_adidas)
+//        shoeNewBalanceView = findViewById(R.id.image_new_balance)
+//        shoeReebokView = findViewById(R.id.image_reebok)
 
         instanceOfStore.createShoeList()
 
@@ -100,7 +100,6 @@ class MainActivity : AppCompatActivity() {
     }
 
 }
-
 
 //            instanceOfStore.listShoe.forEach { shoe ->
 //                when (shoe.brand) {

@@ -1,10 +1,8 @@
 package com.example.shoestore
 
 import android.content.Context
-import android.widget.Button
 import android.widget.ImageView
 import android.widget.Toast
-import kotlin.math.E
 
 class Store {
 
@@ -14,7 +12,7 @@ class Store {
     fun createShoeList() {
         val shoeNike = Shoe()
         shoeNike.brand = (EnumBrand.NIKE)
-        shoeNike.imageId = R.drawable.image_nike
+        shoeNike.imageId = R.drawable.image_nike2
         shoeNike.nameShoe = "Nike Air Force 1"
         shoeNike.colorShoe = "White"
         shoeNike.sizeShoe = 40
