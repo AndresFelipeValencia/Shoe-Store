@@ -77,6 +77,10 @@ class Store {
         }
     }
 
+    fun getShoes(): List<Shoe>  {
+        return listShoe
+    }
+
     fun quantityShoe(): Int {
         return listCar.size
     }

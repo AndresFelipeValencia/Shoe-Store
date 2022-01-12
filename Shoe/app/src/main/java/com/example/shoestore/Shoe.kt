@@ -1,5 +1,7 @@
 package com.example.shoestore
 
+import androidx.annotation.StringRes
+
 class Shoe {
     var isSold: Boolean = false
     var nameShoe: String = ""

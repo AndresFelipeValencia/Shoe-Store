@@ -26,27 +26,6 @@
             android:padding="16dp"
             android:textAppearance="@style/TextAppearance.AppCompat" />
 
-<!--        <TextView-->
-<!--            android:id="@+id/number_shoe"-->
-<!--            android:layout_width="wrap_content"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:padding="16dp"-->
-<!--            android:textAppearance="@style/TextAppearance.AppCompat" />-->
-
-<!--        <Button-->
-<!--            android:id="@+id/button_buy"-->
-<!--            android:layout_width="wrap_content"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:padding="16dp"-->
-<!--            android:textAppearance="@style/TextAppearance.AppCompat" />-->
-
-<!--        <Button-->
-<!--            android:id="@+id/button_clean"-->
-<!--            android:layout_width="wrap_content"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:padding="16dp"-->
-<!--            android:textAppearance="@style/TextAppearance.AppCompat" />-->
-
     </LinearLayout>
 
 </androidx.cardview.widget.CardView>
