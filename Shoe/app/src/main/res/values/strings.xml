@@ -4,6 +4,10 @@
     <string name="buy">Buy!</string>
     <string name="clean">Clean</string>
     <string name="click_to_select_a_shoe">Click to select a shoe</string>
-<!--    <string name="buy">Buy!</string>-->
-
+<!--    <string name="shoe_nike">Nike</string>-->
+<!--    <string name="shoe_polo">Polo</string>-->
+<!--    <string name="shoe_jordan">Jordan</string>-->
+<!--    <string name="shoe_adidas">Adidas</string>-->
+<!--    <string name="shoe_new_balance">New Balance</string>-->
+<!--    <string name="shoe_reebok">Reebok</string>-->
 </resources>

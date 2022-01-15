@@ -1,7 +1,9 @@
 package com.example.shoestore
 
-class Shoe {
+import androidx.annotation.StringRes
 
+class Shoe {
+    var isCar: Boolean = false
     var isSold: Boolean = false
     var nameShoe: String = ""
     lateinit var brand: EnumBrand

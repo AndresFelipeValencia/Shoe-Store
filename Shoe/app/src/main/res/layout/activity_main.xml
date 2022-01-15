@@ -7,7 +7,7 @@
     tools:context=".MainActivity">
 
     <Button
-        android:id="@+id/id_button_buy"
+        android:id="@+id/button_buy"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
@@ -22,7 +22,7 @@
         app:layout_constraintVertical_bias="0.84" />
 
     <Button
-        android:id="@+id/id_button_clean"
+        android:id="@+id/button_clean"
         android:layout_width="162dp"
         android:layout_height="52dp"
         android:layout_marginTop="32dp"
@@ -36,74 +36,18 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.97" />
 
-    <ImageView
-        android:id="@+id/id_image_nike"
-        android:layout_width="115dp"
-        android:layout_height="133dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.054"
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler_view"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:scrollbars="vertical"
+        app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+        app:spanCount="3"
+        app:layout_constraintTop_toBottomOf="@+id/textView"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.18"
-        app:srcCompat="@drawable/image_nike" />
-
-    <ImageView
-        android:id="@+id/id_image_polo"
-        android:layout_width="115dp"
-        android:layout_height="133dp"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.51"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.18"
-        app:srcCompat="@drawable/image_polo" />
-
-    <ImageView
-        android:id="@+id/id_image_jordan"
-        android:layout_width="115dp"
-        android:layout_height="133dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.966"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.18"
-        app:srcCompat="@drawable/image_jordan" />
-
-    <ImageView
-        android:id="@+id/id_image_adidas"
-        android:layout_width="115dp"
-        android:layout_height="133dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.054"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/image_adidas" />
-
-    <ImageView
-        android:id="@+id/id_image_new_balance"
-        android:layout_width="115dp"
-        android:layout_height="133dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.51"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/new_balance" />
-
-    <ImageView
-        android:id="@+id/id_image_reebok"
-        android:layout_width="115dp"
-        android:layout_height="133dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.966"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/image_reebok" />
+        app:layout_constraintBottom_toTopOf="@+id/number_shoe"
+        tools:ignore="MissingConstraints" />
 
     <TextView
         android:id="@+id/textView"
@@ -119,7 +63,7 @@
         app:layout_constraintVertical_bias="0.094" />
 
     <TextView
-        android:id="@+id/id_number_shoe"
+        android:id="@+id/number_shoe"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="32dp"
