@@ -4,10 +4,7 @@ import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.AdapterView
-import android.widget.Button
-import android.widget.ImageView
-import android.widget.TextView
+import android.widget.*
 import androidx.recyclerview.widget.RecyclerView
 import com.example.shoestore.R
 import com.example.shoestore.Shoe
@@ -38,6 +35,15 @@ class ItemAdapter(
         fun bind(shoe: Shoe, clickListener: OnItemClickListener) {
             textView.text = shoe.nameShoe
             imageView.setImageResource(shoe.imageId)
+
+            when {
+                shoe.isCar -> {
+                    imageView.setImageResource(shoe.imageId)
+                }
+                else -> {
+                    imageView.setImageResource(R.drawable.no_available)
+                }
+            }
 
             itemView.setOnClickListener {
                 clickListener.onItemClicked(shoe)

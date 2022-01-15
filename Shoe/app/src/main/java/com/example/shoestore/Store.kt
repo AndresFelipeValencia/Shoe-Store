@@ -59,8 +59,7 @@ class Store {
         listShoe.add(shoeReebok)
     }
 
-    fun addToCart(shoePosition: Int, requireContext: Context, imageView: ImageView) {
-        val shoe = listShoe[shoePosition]
+    fun addToCart(shoe: Shoe, requireContext: Context) {
         when {
             shoe.isSold -> {
                 Toast.makeText(requireContext, "The shoe is not available.", Toast.LENGTH_SHORT)
@@ -68,11 +67,9 @@ class Store {
             }
             listCar.contains(shoe) -> {
                 listCar.remove(shoe)
-                imageView.setImageResource(shoe.imageId)
             }
             else -> {
                 listCar.add(shoe)
-                imageView.setImageResource(R.drawable.no_available)
             }
         }
     }
